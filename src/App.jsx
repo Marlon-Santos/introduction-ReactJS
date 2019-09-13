@@ -1,12 +1,11 @@
-import React, { Component, Fragment } from "react";
-
+import React, { Component } from "react";
+import List from "./components/List";
 class App extends Component {
   render() {
     return (
-      <Fragment>
-        <h1>Testando</h1>
-        <h2>funcionanddo</h2>
-      </Fragment>
+      <>
+        <List />
+      </>
     );
   }
 }
