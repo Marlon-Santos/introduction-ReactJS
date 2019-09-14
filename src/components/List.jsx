@@ -15,12 +15,29 @@ class List extends Component {
       newTech: ""
     });
   };
+  removeList = e => {
+    this.setState({
+      techs: this.state.techs.filter(item => item !== e.value)
+    });
+  };
   render() {
     return (
       <form onSubmit={this.onSubmit}>
         <ul>
           {this.state.techs.map(value => {
-            return <li key={value}>{value}</li>;
+            return (
+              <li key={value}>
+                {value}
+                <button
+                  type="button"
+                  onClick={() => {
+                    this.removeList({ value });
+                  }}
+                >
+                  Remover
+                </button>
+              </li>
+            );
           })}
           <input
             type="text"
